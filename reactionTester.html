@@ -10,6 +10,9 @@
     height: 200px;
     background-color: red;
     display: none;
+    position: relative;
+    top:100px;
+    left: 200px;
   }
   </style>
 
@@ -31,11 +34,18 @@
   var start = new Date().getTime();
 
 function makeShapeAppear() {
+//var for number of pixels shape should move each time it appears up tomax of 400 px
+  var top =  Math.random() * 400;
+
+  //make element appear in random position
+  document.getElementById("shape").style.top = top + "px";
 
   //this makes the shape appear again
   document.getElementById("shape").style.display= "block";
 
   start = new Date().getTime();
+
+  
 
 
 }
