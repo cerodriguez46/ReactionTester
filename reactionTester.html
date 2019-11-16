@@ -2,7 +2,7 @@
 <html>
   <head>
 
-    <title>ReactionTester</title>
+    <title>Reaction Tester</title>
 
 <style type="text/css">
   #shape{
@@ -14,6 +14,15 @@
     top:100px;
     left: 200px;
   }
+
+
+  body {
+    font-family: sans-serif;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
   </style>
 
   </head>
@@ -21,8 +30,12 @@
 
   <body>
 
+    <h1>Test your reactions!</h1>
+
+    <p>Click on the squares and circles as quickly as you can!</p>
+
 <!--this paragraph will display your time-->
-    <p>Your time: <span id="timeTaken"</span></p>
+    <p class = "bold">Your time: <span id="timeTaken"</span></p>
 
     <div id="shape"></div>
 
@@ -49,7 +62,14 @@ function makeShapeAppear() {
 
   var left = Math.random() * 400;
 
-  var width = Math.random() * 400;
+  var width = (Math.random() * 200) + 100;
+
+  //makek circle appear as a cirlc occasionally
+  if (Math.random() > 0.5) {
+    document.getElementById("shape").style.borderRadius = "50%";
+  } else {
+    document.getElementById("shape").style.borderRadius = "0";
+  }
 
   //randomly change background getRandomColor
   document.getElementById("shape").style.backgroundColor = getRandomColor();
