@@ -36,10 +36,16 @@ function makeShapeAppear() {
   document.getElementById("shape").style.display= "block";
 
   start = new Date().getTime();
+
+
 }
 
-//makes shape appear after 1000 miliseconds
-setTimeout(makeShapeAppear,1000);
+function appearAfterDelay(){
+  //makes shape appear after a random time between 0 and 2 seconds
+  setTimeout(makeShapeAppear, Math.random() * 2000);
+}
+
+appearAfterDelay();
 
 document.getElementById("shape").onclick = function() {
 
@@ -52,7 +58,7 @@ document.getElementById("shape").onclick = function() {
 //gets the time taken span and puts the time within it
   document.getElementById("timeTaken").innerHTML = timeTaken + "s";
 
-
+appearAfterDelay();
 }
 
   </script>
