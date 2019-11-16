@@ -17,12 +17,28 @@
 
   <body>
 
+<!--this paragraph will display your time-->
+    <p>Your time: <span id="timeTaken"</span></p>
+
     <div id="shape"></div>
 
 
 <script type="text/javascript">
+
+var start = new Date().getTime();
+
 document.getElementById("shape").onclick = function() {
+
   document.getElementById("shape").style.display = "none";
+
+  var end = new Date().getTime();
+
+//divide by 1000 to get time in seconds
+  var timeTaken = (end - start) / 1000;
+//gets the time taken span and puts the time within it
+  document.getElementById("timeTaken").innerHTML = timeTaken + "s";
+
+
 }
 
   </script>
